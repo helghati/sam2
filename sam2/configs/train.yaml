@@ -6,7 +6,7 @@ scratch:
   num_train_workers: 10
   num_frames: 1
   max_num_objects: 3
-  base_lr: 5.0e-6
+  base_lr: 3.0e-6
   vision_lr: 3.0e-06
   phases_per_epoch: 1
   num_epochs: 40
@@ -68,7 +68,7 @@ trainer:
       scalp: 1
       trunk:
         _target_: sam2.modeling.backbones.hieradet.Hiera
-        embed_dim: 112
+        embed_dim: 144
         num_heads: 2
         drop_path_rate: 0.1
       neck:
@@ -314,7 +314,7 @@ trainer:
 
       state_dict:
         _target_: training.utils.checkpoint_utils.load_checkpoint_and_apply_kernels
-        checkpoint_path: ./checkpoints/sam2_hiera_small.pt # PATH to SAM 2.1 checkpoint
+        checkpoint_path: ./checkpoints/sam2.1_hiera_base_plus.pt # PATH to SAM 2.1 checkpoint
         ckpt_state_dict_keys: ['model']
 
 launcher:
