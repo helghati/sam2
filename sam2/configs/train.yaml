@@ -9,7 +9,7 @@ scratch:
   base_lr: 3.0e-6
   vision_lr: 3.0e-06
   phases_per_epoch: 1
-  num_epochs: 40
+  num_epochs: 20
 
 dataset:
   # PATHS to Dataset
@@ -68,7 +68,7 @@ trainer:
       scalp: 1
       trunk:
         _target_: sam2.modeling.backbones.hieradet.Hiera
-        embed_dim: 144
+        embed_dim: 112
         num_heads: 2
         drop_path_rate: 0.1
       neck:
